@@ -1,30 +1,31 @@
-class People{
-    constructor(name,age){
-        this.name=name;
-        this.age=age;
+class jQuery{
+    constructor(select){
+        let slice=Array.prototype.slice;
+        let dom=slice.call(document.querySelectorAll(select));
+        let len=dom?dom.length:0;
+        for (var i = 0; i < i.length; i++) {
+            this[i]=dom[i];
+        }
+        this.length=len;
+        this.select=select || '';
+
     }
-    eat(){
-        alert(`${this.name} eat something`)
+    append(node){
+
     }
-    speak(){
-        alert(`${this.name} 年龄 ${this.age} speak something`)
+    html(name){
+
     }
+    hasClass(){
+
+    }
+    //此处省略n个api
 }
-//babel-loader版本要到7
-class Student extends People{
-    constructor(name,age,number){
-        super(name,age);
-        this.number=number;
-    }
-    study(){
-        alert(`${this.name} study`)
-    }
+window.$=function(Select){
+    //工厂模式
+    return new jQuery(Select)
 }
-let xiaoming=new Student("yoke",20,'A1');
-xiaoming.study();
-xiaoming.eat();
-class A extends People{
-    constructor(name,age,number);
-    this.name=name;
-    this.age=age;
-}
+
+var $p=$('p');
+console.log($p);
+console.log($p.append);
